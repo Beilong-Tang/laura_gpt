@@ -1,10 +1,5 @@
 # LauraGPT
 
-:heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark: __This repository is under construction__ :heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark:
+Note that this branch can serve as a startup branch for running ddp model on slurm system.
 
-Unofficial Implementation for [LauraGPT](https://arxiv.org/abs/2310.04673)
-
-This repository simplifies the code for training the LauraGPT model.
-
-We currently support
-    - [ ] LauraTTS.
+Run `sbatch test.sh`
