@@ -100,7 +100,7 @@ class Trainer:
         self.scheduler.step()
         torch.cuda.empty_cache()
         if if_log:
-            stats['lr'] = optim.param_groups[0]['lr']
+            stats["lr"] = optim.param_groups[0]["lr"]
             return stats
         return None
 

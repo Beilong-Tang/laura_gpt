@@ -4,6 +4,7 @@ import sys
 import argparse
 import logging
 import torch
+
 sys.path.append(os.getcwd())
 
 from typing import Sequence
@@ -14,8 +15,6 @@ from typing import Optional
 from funcodec.bin.text2audio_inference import Text2Audio, save_audio
 from funcodec.tasks.text2audio_generation import Text2AudioGenTask
 from utils import setup_logger, update_args, setup_seed
-
-
 
 
 def inference_func(
@@ -150,6 +149,8 @@ if __name__ == "__main__":
     parser.add_argument("--default_config", type=str)
     parser.add_argument("--model_file", type=str)
     parser.add_argument("--output_dir", type=str)
+    parser.add_argument("--raw_inputs", nargs="*", default=None, type=str)
+    parser.add_argument("--tokenize_to_phone", action="store_true")
     args = parser.parse_args()
     update_args(args, args.default_config)
     main(args)
