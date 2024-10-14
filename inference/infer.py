@@ -5,6 +5,7 @@ import argparse
 import logging
 import torch
 import librosa
+import numpy as np
 
 sys.path.append(os.getcwd())
 
@@ -119,6 +120,7 @@ def inference_func(
                     )
             else:
                 result_list.append(item)
+        logging.info("inferencing is done!!")
 
         return result_list
 
