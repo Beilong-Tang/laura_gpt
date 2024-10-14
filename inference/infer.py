@@ -60,6 +60,7 @@ def inference_func(
         logging.info("param_dict: {}".format(param_dict))
         if data_path_and_name_and_type is None and raw_inputs is not None:
             # add additional parenthesis to keep the same data format as streaming_iterator
+            logging.info("infering on one audio data")
             data_dict = dict(text=[raw_inputs[0]])
             if len(raw_inputs) == 3:
                 data_dict["prompt_text"] = [raw_inputs[1]]
