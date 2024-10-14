@@ -1,3 +1,4 @@
+data_path_and_name_and_type: null
 codec_config_file: /public/home/qinxy/bltang/LLM_TTS/egs/exp/audio_codec-encodec-zh_en-general-16k-nq32ds640-pytorch/config.yaml
 codec_model_file: /public/home/qinxy/bltang/LLM_TTS/egs/exp/audio_codec-encodec-zh_en-general-16k-nq32ds640-pytorch/model.pth
 sampling: 25
