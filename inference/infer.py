@@ -139,7 +139,7 @@ def main(args: argparse.Namespace):
     logger.info(args)
     forward = inference_func(**vars(args))
     # forward(data_path_and_name_and_type= args.)
-    forward(args.data_path_and_name_and_type)
+    forward(args.data_path_and_name_and_type, args.raw_inputs)
 
     pass
 
