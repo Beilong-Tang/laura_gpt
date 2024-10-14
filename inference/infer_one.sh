@@ -4,8 +4,8 @@
 #SBATCH -N 1
 #SBATCH --gres=dcu:4
 #SBATCH -p kshdnormal02
-#SBATCH -o inference/log_infer.out
-#SBATCH -e inference/log_infer.err
+#SBATCH -o inference/log_infer_one.out
+#SBATCH -e inference/log_infer_one.err
 
 export MIOPEN_FIND_MODE=3
 export HSA_FORCE_FINE_GRAIN_PRICE=1
