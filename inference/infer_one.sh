@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J funcodec_inference
+#SBATCH -J funcodec_inference_one
 #SBATCH -n 32
 #SBATCH -N 1
 #SBATCH --gres=dcu:4
