@@ -4,7 +4,7 @@ codec_model_file: /public/home/qinxy/bltang/LLM_TTS/egs/exp/audio_codec-encodec-
 sampling: 25
 beam_size: 1
 text_emb_model: Null # Does not matter if We use G2P phonazation
-continual: 0 # No continual, where 1 stands for there is continual stuff
+continual: 1 # No continual, where 1 stands for there is continual stuff
 
 
 seed: 1234
