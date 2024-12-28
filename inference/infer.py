@@ -4,6 +4,9 @@ import sys
 import argparse
 import logging
 import torch
+import librosa
+import numpy as np
+
 sys.path.append(os.getcwd())
 
 from typing import Sequence
@@ -14,8 +17,6 @@ from typing import Optional
 from funcodec.bin.text2audio_inference import Text2Audio, save_audio
 from funcodec.tasks.text2audio_generation import Text2AudioGenTask
 from utils import setup_logger, update_args, setup_seed
-
-
 
 
 def inference_func(
@@ -61,6 +62,7 @@ def inference_func(
         logging.info("param_dict: {}".format(param_dict))
         if data_path_and_name_and_type is None and raw_inputs is not None:
             # add additional parenthesis to keep the same data format as streaming_iterator
+            logging.info("infering on one audio data")
             data_dict = dict(text=[raw_inputs[0]])
             if len(raw_inputs) == 3:
                 data_dict["prompt_text"] = [raw_inputs[1]]
@@ -118,6 +120,7 @@ def inference_func(
                     )
             else:
                 result_list.append(item)
+        logging.info("inferencing is done!!")
 
         return result_list
 
@@ -139,7 +142,7 @@ def main(args: argparse.Namespace):
     logger.info(args)
     forward = inference_func(**vars(args))
     # forward(data_path_and_name_and_type= args.)
-    forward(args.data_path_and_name_and_type)
+    forward(args.data_path_and_name_and_type, args.raw_inputs)
 
     pass
 
@@ -150,6 +153,8 @@ if __name__ == "__main__":
     parser.add_argument("--default_config", type=str)
     parser.add_argument("--model_file", type=str)
     parser.add_argument("--output_dir", type=str)
+    parser.add_argument("--raw_inputs", nargs="*", default=None, type=str)
+    parser.add_argument("--tokenize_to_phone", action="store_true")
     args = parser.parse_args()
     update_args(args, args.default_config)
     main(args)

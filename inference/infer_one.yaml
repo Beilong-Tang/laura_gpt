@@ -1,0 +1,10 @@
+data_path_and_name_and_type: null
+codec_config_file: /public/home/qinxy/bltang/LLM_TTS/egs/exp/audio_codec-encodec-zh_en-general-16k-nq32ds640-pytorch/config.yaml
+codec_model_file: /public/home/qinxy/bltang/LLM_TTS/egs/exp/audio_codec-encodec-zh_en-general-16k-nq32ds640-pytorch/model.pth
+sampling: 25
+beam_size: 1
+text_emb_model: Null # Does not matter if We use G2P phonazation
+continual: 1 # No continual, where 1 stands for there is continual stuff
+
+
+seed: 1234

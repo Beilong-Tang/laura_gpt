@@ -11,5 +11,4 @@ beam_size: 1
 text_emb_model: Null # Does not matter if the input is tokenized already
 continual: 0 # No continual, where 1 stands for there is continual stuff
 
-
 seed: 1234
