@@ -91,6 +91,8 @@ class Trainer:
         uttid, _data = data
         for key, value in _data.items():
             _data[key] = value.cuda()
+
+        ## Process Mel Spectrogram ##
         loss, stats, weight = self.model(**_data)
         loss = apply_weight_average(loss, stats, weight)
         loss.backward()
